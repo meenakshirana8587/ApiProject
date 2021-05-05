@@ -1,0 +1,28 @@
+
+<div class="container">
+    <h3 class="text-center text-warning">Async Pipe</h3>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Color</th>
+                <th>Expiry Date</th>
+                <th>In Stock</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of items$ | async">
+                <td>{{p.id}}</td>
+                <td>{{p.title}}</td>
+                <td>{{p.price}}</td>
+                <td>{{p.quantity}}</td>
+                <td>{{p.color}}</td>
+                <td>{{p.expDate}}</td>
+                <td>{{p.inStock}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

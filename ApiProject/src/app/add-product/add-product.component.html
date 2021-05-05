@@ -1,0 +1,66 @@
+<br>
+<br>
+<br>
+<div class="container"> 
+
+    <h1 class="text-white bg-dark text-center">Add Products</h1>
+    <br/>
+    <br/>
+    <form (ngSubmit)='submit()' [formGroup] = "addForm" novalidate class ="form-group">
+        <input formControlName='title'
+            type='text'
+            class='form-control form-control-bg'
+            placeholder="Enter title"/>
+        <div class ="alert alert-danger" *ngIf="addForm?.get('title')?.hasError('required') && addForm?.get('title')?.touched">
+            Title is Required
+        </div>
+ 
+        <input formControlName='price'
+        type='number'
+        class='form-control'
+        placeholder="Enter price"/>
+    
+ 
+    <input formControlName='quantity'
+            type='number'
+            class='form-control'
+            placeholder="Enter quantity"/>
+        
+ 
+    <input formControlName='color'
+        type='text'
+        class='form-control'
+        placeholder="Enter color"/>
+
+        <input formControlName='expDate'
+        type='text'
+        class='form-control'
+        placeholder="Enter Expiry Date" onclick="(this.type='date')" onkeyup="(this.type='date')"/>
+    
+
+
+ 
+        <label class = 'control-label'>In Stock</label>
+        <br>
+        <label class=" radio-inline">
+            <input type ="radio" [value]="true" formControlName ="inStock">True
+        </label>
+        <label class=" radio-inline">
+            <input type ="radio" [value]="false" formControlName ="inStock">False
+        </label>
+
+
+
+ 
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+    <button [disabled] = 'addForm.invalid' type="submit" class="btn btn-primary btn-block">Add Product</button>
+        </div>
+        <div class="col-md-6">
+    <button type="reset"  class="btn btn-warning btn-block">Reset</button>
+        </div>
+    </div>
+    </form>
+
+</div>

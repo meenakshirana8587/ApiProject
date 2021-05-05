@@ -1,0 +1,15 @@
+
+<div class="container">
+    <h2 class="text-center">Products</h2>
+    <hr/>
+    <br/>
+    <div class="row">
+        <div class="col-md-6">
+            <app-async [items$]= "products"></app-async>
+        </div>
+        <div class="col-md-6">
+            <app-subscribe [products]= "products"></app-subscribe>
+        </div>
+    </div>
+</div>
+
