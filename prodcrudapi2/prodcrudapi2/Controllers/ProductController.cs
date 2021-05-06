@@ -44,5 +44,20 @@ namespace prodcrudapi2.Controllers
             return item;
 
         }
+        [HttpDelete("items/{id}")]
+        public Product deleteItems(int id)
+        {
+            var res = _context.Products.Find(id);
+            _context.Products.Remove(res);
+            _context.SaveChanges();
+            return res;
+
+        }
+        [HttpGet("items/{id}")]
+        public Product getItem(int id)
+        {
+            var res = _context.Products.Find(id);
+            return res;
+        }
     }
 }
