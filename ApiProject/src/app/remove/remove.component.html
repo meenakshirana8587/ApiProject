@@ -1,0 +1,13 @@
+<h2 class="text-center">Delete Product</h2>
+<div class="container">
+<div class="row">
+    <div class="col-md-6 ">
+    <form  [formGroup] = 'deleteform' (ngSubmit) ="submit()" class="form-group">
+ 
+    <div class="form-group">
+            <label for="titlename">Enter Id</label>
+        <input formControlName='id'
+        type ="number"
+        class="form-control" id="titlename" placeholder="Enter Id">
+    </div>
+    <button type="submit" [disabled] = "deleteform.invalid" class="btn btn-danger"><i class="fas fa-trash-alt fa-2x"></i></button>

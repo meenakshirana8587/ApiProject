@@ -1,1 +1,52 @@
-<h1 class="text-center text-success">Delete coming soon</h1>
+
+<br>
+<br>
+<br>
+<div class="container"> 
+
+    <h1 class="text-white bg-dark text-center">Product</h1>
+    <br/>
+    <br/>
+    <table class="table">
+        <thead>
+            <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Color</th>
+            <th>Expiry Date</th>
+            <th>Quantity</th>
+            <th>In Stock</th>
+        </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{product?.title}}</td>
+                    <td>{{product?.price}}</td>
+                    <td>{{product?.color}}</td>
+                    <td>{{product?.expDate}}</td>
+                    <td>{{product?.quantity}}</td>
+                    <td>{{product?.inStock}}</td>
+                </tr>
+            </tbody>
+            
+
+
+
+
+        
+    </table>
+    <br>
+    <div class="row">
+        <div class="col-md-5"></div>
+        <div class="col-md-1">
+    <button routerLink="updateproduct"  class="btn btn-success btn-block"><i class="fas fa-edit fa-2x"></i></button>
+        </div>
+        <div class="col-md-1">
+    <button routerLink="deleteproduct"  class="btn btn-danger btn-block"><i class="fas fa-trash-alt fa-2x"></i></button>
+        </div>
+        <div class="col-md-5"></div>
+    </div>
+    <router-outlet></router-outlet>
+    
+
+</div>

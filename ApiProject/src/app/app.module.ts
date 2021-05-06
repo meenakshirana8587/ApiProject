@@ -19,6 +19,9 @@ import {MatSelectModule} from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UpdateComponent } from './update/update.component';
 import { DeleteComponent } from './delete/delete.component';
+import { MatTableComponent } from './mat-table/mat-table.component';
+import {MatTableModule} from '@angular/material/table';
+import { RemoveComponent } from './remove/remove.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import { DeleteComponent } from './delete/delete.component';
     SubscribeComponent,
     AsyncComponent,
     UpdateComponent,
-    DeleteComponent
+    DeleteComponent,
+    MatTableComponent,
+    RemoveComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +49,8 @@ import { DeleteComponent } from './delete/delete.component';
     
     MatSelectModule,
     MatListModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatTableModule
     
   ],
   providers: [],

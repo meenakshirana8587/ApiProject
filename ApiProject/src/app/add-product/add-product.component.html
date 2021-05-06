@@ -1,12 +1,13 @@
 <br>
-<br>
-<br>
+
+
 <div class="container"> 
 
     <h1 class="text-white bg-dark text-center">Add Products</h1>
     <br/>
-    <br/>
+    
     <form (ngSubmit)='submit()' [formGroup] = "addForm" novalidate class ="form-group">
+        <h3>Title</h3>
         <input formControlName='title'
             type='text'
             class='form-control form-control-bg'
@@ -14,24 +15,24 @@
         <div class ="alert alert-danger" *ngIf="addForm?.get('title')?.hasError('required') && addForm?.get('title')?.touched">
             Title is Required
         </div>
- 
+        <h3>Price</h3>
         <input formControlName='price'
         type='number'
         class='form-control'
         placeholder="Enter price"/>
     
- 
+        <h3>Quantity</h3>
     <input formControlName='quantity'
             type='number'
             class='form-control'
             placeholder="Enter quantity"/>
         
- 
+            <h3>Color</h3>
     <input formControlName='color'
         type='text'
         class='form-control'
         placeholder="Enter color"/>
-
+        <h3>Expiry Date</h3>
         <input formControlName='expDate'
         type='text'
         class='form-control'
@@ -40,8 +41,8 @@
 
 
  
-        <label class = 'control-label'>In Stock</label>
-        <br>
+        <h3>In Stock</h3>
+        
         <label class=" radio-inline">
             <input type ="radio" [value]="true" formControlName ="inStock">True
         </label>
@@ -54,12 +55,14 @@
  
     <br>
     <div class="row">
-        <div class="col-md-6">
-    <button [disabled] = 'addForm.invalid' type="submit" class="btn btn-primary btn-block">Add Product</button>
+        <div class="col-md-5"></div>
+        <div class="col-md-1">
+    <button [disabled] = 'addForm.invalid' type="submit" class="btn btn-success btn-block"><i class="fas fa-plus-square fa-2x"></i></button>
         </div>
-        <div class="col-md-6">
-    <button type="reset"  class="btn btn-warning btn-block">Reset</button>
+        <div class="col-md-1">
+    <button type="reset"  class="btn btn-danger btn-block"><i class="fas fa-redo-alt fa-2x"></i></button>
         </div>
+        <div class="col-md-5"></div>
     </div>
     </form>
 

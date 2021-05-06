@@ -1,15 +1,34 @@
 
 <div class="container">
-    <h2 class="text-center">Products</h2>
-    <hr/>
+    <br/>
+    <br/>
     <br/>
     <div class="row">
-        <div class="col-md-6">
-            <app-async [items$]= "products"></app-async>
+        <div class="col-md-3"></div>
+        <div class="col-md-2">
+            <button class="btn btn-danger" (click)= showSubscribe()>Subscribe Method</button>
         </div>
-        <div class="col-md-6">
-            <app-subscribe [products]= "products"></app-subscribe>
+        <div class="col-md-2">
+            <button class="btn btn-danger" (click)= showAsync()>Async pipe</button>
         </div>
+        <div class="col-md-2">
+            <button class="btn btn-danger" (click)= showMatTable()>Angular table</button>
+        </div>
+        <div class="col-md-3"></div>
     </div>
+
+    
+    <hr/>
+    <br/>
+    
+            <app-async *ngIf= "showingAsync==true" [items$]= "products"></app-async>
+        
+        
+            <app-subscribe  *ngIf= "showingSubscribe==true" [products]= "products"></app-subscribe>
+
+            
+            <app-mat-table  *ngIf= "showingMaterialTable==true" [products]= "products"></app-mat-table>
+        
+    
 </div>
 

@@ -39,23 +39,36 @@ export class AppService {
   }
   putProduct(product: Product): Observable<Product>
   {
-    const apiurl= "https://localhost:44391/api/product/items/id";
+    const apiurl= "https://localhost:44391/api/product/items/"+product.id;
     const headers= {'content-type':'application/json'};
-    return this.http.put<Product>(apiurl,{'headers': headers}).pipe(
-      tap((item:any)=>{console.log(item)})
-
-
+    const productToUpdate = JSON.stringify(product);
+    return this.http.put<Product>(apiurl,productToUpdate, {headers:headers})
+    .pipe(
+      catchError(error =>this.handleError(error))
     );
   }
-  deleteProduct(product: Product): Observable<Product>
-  {
-    const apiurl= "https://localhost:44391/api/product/items/id";
-    const headers= {'content-type':'application/json'};
-    return this.http.delete<Product>(apiurl,{'headers': headers}).pipe(
-    
 
 
+  
+  
+  deleteProduct(product: Product): Observable<Product>{
+    const apiurl=  "https://localhost:44391/api/product/items/"+product.id;
+    const headers = {'content-type' : 'application/json'};
+   // const taskDto = JSON.stringify(product);
+    return this.http.delete<Product>(apiurl, {'headers':headers})
+    .pipe(
+      catchError(error =>this.handleError(error))
     );
+  }
+
+  getproductById(id: number)
+  {
+      const apiurl=  "https://localhost:44391/api/product/items/"+id;
+      const headers= {'content-type':'application/json'}; 
+      return this.http.get(apiurl ,{'headers': headers}).pipe(
+        catchError(error =>this.handleError(error))
+      );  
+     
   }
 
 }

@@ -11,7 +11,8 @@ import { Product } from '../Product';
 })
 export class AsyncComponent implements OnInit {
   @Input() items$: Observable<Product[]>
-  
+  updateurl= "updateproduct";
+  deleteurl="deleteproduct";
   constructor() {
     this.items$= new Observable<Product[]>();
    }

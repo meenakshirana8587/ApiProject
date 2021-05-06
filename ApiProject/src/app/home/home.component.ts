@@ -29,6 +29,30 @@ export class HomeComponent implements OnInit {
     //   this.productsubscription.unsubscribe();
     // }
   }
+  showingSubscribe: boolean= true;
+  showingAsync: boolean= false;
+  showingMaterialTable: boolean= false;
+  showSubscribe()
+  {
+  this.showingSubscribe= true;
+  this.showingAsync= false;
+  this.showingMaterialTable= false;
+
+  }
+  showAsync()
+  {
+    this.showingSubscribe= false;
+  this.showingAsync= true;
+  this.showingMaterialTable= false;
+
+  }
+  showMatTable()
+  {
+    this.showingSubscribe= false;
+  this.showingAsync= false;
+  this.showingMaterialTable= true;
+
+  }
 
 
 }

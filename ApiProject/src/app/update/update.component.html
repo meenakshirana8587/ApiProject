@@ -1,1 +1,71 @@
-<h1 class="text-center text-success">Update coming soon</h1>
+<br/>
+<div class="container"> 
+
+    <h1 class="text-white bg-dark text-center">Update Product</h1>
+    <br/>
+    
+    <form (ngSubmit)='submit()' [formGroup] = "updateForm" novalidate class ="form-group">
+        <h3>Id</h3>
+        <input formControlName='id'
+            type='number'
+            class='form-control form-control-bg'
+            placeholder="Enter Id"/>
+            <h3>Title</h3>
+        <input formControlName='title'
+            type='text'
+            class='form-control form-control-bg'
+            placeholder="Enter title"/>
+        <div class ="alert alert-danger" *ngIf="updateForm?.get('title')?.hasError('required') && updateForm?.get('title')?.touched">
+            Title is Required
+        </div>
+        <h3>Price</h3>
+        <input formControlName='price'
+        type='number'
+        class='form-control'
+        placeholder="Enter price"/>
+    
+        <h3>Quantity</h3>
+    <input formControlName='quantity'
+            type='number'
+            class='form-control'
+            placeholder="Enter quantity"/>
+        
+            <h3>Color</h3>
+    <input formControlName='color'
+        type='text'
+        class='form-control'
+        placeholder="Enter color"/>
+        <h3>Expiry Date</h3>
+        <input formControlName='expDate'
+        type='text'
+        class='form-control'
+        placeholder="Enter Expiry Date" onclick="(this.type='date')" onkeyup="(this.type='date')"/>
+    
+
+
+ 
+        <h3>In Stock</h3>
+        <label class=" radio-inline">
+            <input type ="radio" [value]="true" formControlName ="inStock">True
+        </label>
+        <label class=" radio-inline">
+            <input type ="radio" [value]="false" formControlName ="inStock">False
+        </label>
+
+
+
+ 
+    <br>
+    <div class="row">
+        <div class="col-md-5"></div>
+        <div class="col-md-1">
+    <button [disabled] = 'updateForm.invalid' type="submit" class="btn btn-success btn-block"><i class="fas fa-edit fa-2x"></i></button>
+        </div>
+        <div class="col-md-1">
+    <button type="reset"  class="btn btn-danger btn-block"><i class="fas fa-redo-alt fa-2x"></i></button>
+        </div>
+        <div class="col-md-5"></div>
+    </div>
+    </form>
+
+</div>

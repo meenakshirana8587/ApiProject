@@ -1,16 +1,16 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
-import { AppService } from '../app.service';
 import { Product } from '../Product';
 
 @Component({
-  selector: 'app-subscribe',
-  templateUrl: './subscribe.component.html',
-  styleUrls: ['./subscribe.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-mat-table',
+  templateUrl: './mat-table.component.html',
+  styleUrls: ['./mat-table.component.css']
 })
-export class SubscribeComponent implements OnInit,OnDestroy, OnChanges {
-  title = 'prodcrudapidata';
+export class MatTableComponent implements OnInit {
+
+  
+
   @Input() products:Observable<Product[]>;
   updateurl= "updateproduct";
   deleteurl="deleteproduct";
@@ -31,14 +31,8 @@ export class SubscribeComponent implements OnInit,OnDestroy, OnChanges {
       
       
   }
-
-  ngOnChanges(): void {
-    
-  }
+  displayedColumns: string[] = ['id', 'title', 'price', 'quantity','color','expDate','inStock','edit','delete'];
+  columnsToDisplay: string[] = this.displayedColumns.slice();
   
-  ngOnDestroy()
-  {
-    
-  }
 
 }
